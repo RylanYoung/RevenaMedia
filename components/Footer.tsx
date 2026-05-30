@@ -15,7 +15,10 @@ export default function Footer() {
             style={{ height: '34px', width: 'auto' }}
           />
         </div>
-        <div className="floc">Sydney, Australia</div>
+        <div className="foot-right">
+          <a className="foot-phone" href="tel:+61479116472">0479 116 472</a>
+          <div className="floc">Sydney, Australia</div>
+        </div>
       </div>
     </footer>
   )
