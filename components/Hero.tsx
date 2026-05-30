@@ -38,6 +38,7 @@ export default function Hero() {
               <span>Allied Health</span>
               <span>Legal</span>
               <span>Real Estate</span>
+              <span>Trades</span>
             </div>
           </div>
         </div>
