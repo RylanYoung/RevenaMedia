@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://revenamedia.com.au/sitemap.xml
