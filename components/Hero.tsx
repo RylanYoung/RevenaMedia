@@ -2,6 +2,34 @@
 
 import PhoneMockup from './PhoneMockup'
 
+const industries = [
+  'Dental',
+  'Electrical',
+  'Medical',
+  'Plumbing',
+  'Allied Health',
+  'HVAC',
+  'Legal',
+  'Roofing',
+  'Real Estate',
+  'Gas Fitting',
+  'Physiotherapy',
+  'Carpentry',
+  'Accounting',
+  'Tiling',
+  'Psychology',
+  'Painting',
+  'Optometry',
+  'Landscaping',
+  'Financial Planning',
+  'Solar',
+  'Fencing',
+  'Chiropractic',
+  'Insurance',
+  'Concreting',
+  'Veterinary',
+]
+
 export default function Hero() {
   return (
     <section className="hero" id="top" aria-label="Hero">
@@ -32,13 +60,15 @@ export default function Hero() {
 
           <div className="hero-trust fu d3" aria-label="Built for these businesses">
             <span className="ht-label">Built for service businesses that can&apos;t miss a call</span>
-            <div className="ht-trades">
-              <span>Dental</span>
-              <span>Medical</span>
-              <span>Allied Health</span>
-              <span>Legal</span>
-              <span>Real Estate</span>
-              <span>Trades</span>
+            <div className="marquee-wrap" aria-hidden="true">
+              <div className="marquee-track">
+                {[...industries, ...industries].map((name, i) => (
+                  <span key={i} className="marquee-item">
+                    <span className="marquee-dot" />
+                    {name}
+                  </span>
+                ))}
+              </div>
             </div>
           </div>
         </div>

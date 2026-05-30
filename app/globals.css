@@ -309,28 +309,61 @@ header {
   color: var(--muted-2);
 }
 
-.ht-trades {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px 22px;
+/* ── Marquee scrolling strip ── */
+.marquee-wrap {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 14%,
+    black 86%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 14%,
+    black 86%,
+    transparent 100%
+  );
 }
 
-.ht-trades span {
-  font-weight: 700;
-  font-size: 13.5px;
-  color: var(--muted);
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 32s linear infinite;
+}
+
+.marquee-wrap:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+.marquee-item {
   display: inline-flex;
   align-items: center;
   gap: 8px;
+  font-weight: 700;
+  font-size: 13.5px;
+  color: var(--muted);
+  white-space: nowrap;
+  padding: 0 22px 0 0;
+  flex: none;
 }
 
-.ht-trades span::before {
-  content: '';
+.marquee-dot {
   width: 5px;
   height: 5px;
   background: var(--purple);
   transform: rotate(45deg);
   flex: none;
+  opacity: 0.8;
+}
+
+@keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
 
 h1 {
@@ -1373,5 +1406,9 @@ footer {
     transition: none !important;
     opacity: 1 !important;
     transform: none !important;
+  }
+
+  .marquee-track {
+    animation: none !important;
   }
 }
